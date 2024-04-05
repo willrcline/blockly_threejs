@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>My first three.js app</title>
+		<style>
+			body { 
+        margin: 0; 
+        display: flex;
+        flex-direction: row;
+        height: 100vh;
+      }
+      #main {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%
+        /* justify-content: center; */
+      }
+      #blocklyContainer {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 100%;
+      }
+      #threeContainer {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 100%;
+      }
+      #c {
+        position: static;
+      }
+      button {
+        display: none;
+        width: 80px;
+        margin: 10px;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+		</style>
+	</head>
+	<body>
+    <div id="main">
+      <div id="blocklyContainer"> 
+        blockly contents
+      </div>
+      <div id="threeContainer">
+        <canvas id="c"></canvas>
+        <!-- add a reset and a run program button -->
+        <button id="reset" onclick="handleResetProgram()">Reset</button>
+        <button id="run" onclick="handleRunProgram()">Run program</button>
+        <script type="module" src="/three/index.js"></script>
+        <script type="module">
+          import { handleResetProgram, handleRunProgram } from './buttons.js';
+          document.getElementById("reset").onclick = handleResetProgram;
+          document.getElementById("run").onclick = handleRunProgram;
+        </script>
+      </div>
+    </div>
+	</body>
+</html>
