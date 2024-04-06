@@ -1,9 +1,16 @@
 let programRunning = false;
-let user = { position: { x: 0, y: -1 } };
+let user = { 
+  position: { x: 0, y: -1 },
+  // rotation: { y: Math.PI / 2},
+  rotation: { y: Math.PI/2, x: Math.PI/2},
+};
 let blocklyInstructions = [
   "moveForward",
+  "rotateRight",
   "moveForward",
-  "moveForward",
+  // "rotateLeft",
+  // "moveForward",
+  // "moveForward",
 ];
 let currentInstructionIndex = 0;
 
@@ -11,6 +18,8 @@ export const getProgramRunning = () => programRunning;
 export const setProgramRunning = (value) => { programRunning = value; };
 export const getUserPosition = () => user.position;
 export const setUserPosition = (value) => { user.position = value; };
+export const getUserRotation = () => user.rotation;
+export const setUserRotation = (value) => { user.rotation = value; };
 export const setBlocklyInstructions = (value) => { blocklyInstructions = value;}
 export const getBlocklyInstructions = () => blocklyInstructions
 export const getCurrentInstructionIndex = () => currentInstructionIndex
