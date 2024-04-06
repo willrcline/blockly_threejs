@@ -51,9 +51,9 @@ scene.add(light);
 
 let userObj;
 const objLoader = new OBJLoader();
-objLoader.setPath('assets/');
+// objLoader.setPath('assets/');
 
-objLoader.load('humanoid.obj', function ( object ) {
+objLoader.load('/models/humanoid.obj', function ( object ) {
   userObj = object;
   scene.add( userObj )
   userObj.scale.set(0.0006, 0.0006, 0.0006);
