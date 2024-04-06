@@ -133,7 +133,7 @@ function animation(time) {
   } else {
     if (userObj) {
       resetUser()
-
+      updateUserObj()
     }
   }
 

@@ -1,9 +1,6 @@
 import {
   setProgramRunning,
   getProgramRunning,
-  getUserPosition,
-  setUserPosition,
-  setUserRotation,
   resetUser,
   setBlocklyInstructions,
   setCurrentInstructionIndex,
@@ -26,10 +23,13 @@ function checkButtonDisplay() {
 
 checkButtonDisplay();
 
-// Function to toggle the programRunning variable
 function handleRunProgram() {
   const codeStr = Blockly.JavaScript.workspaceToCode(workspace);
   const codeArray = codeStr.split("\n")
+  if (codeArray.length == 1 && codeArray[0] == "") {
+    alert("Add blocks to the workspace to run the program")
+    return;
+  }
   console.log("blockly codeArray___", codeArray);
   setBlocklyInstructions(codeArray);
   setProgramRunning(true);
