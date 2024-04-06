@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "blockly": "^10.4.3",
+    "serve": "^14.2.1",
+    "three": "^0.163.0"
+  },
+  "devDependencies": {
+    "vite": "^5.2.8"
+  },
+  "scripts": {
+    "build": "vite build",
+    "start": "serve -s dist"
+  }
+}
