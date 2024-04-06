@@ -1,7 +1,6 @@
 let programRunning = false;
 let user = { 
   position: { x: 0, y: -1 },
-  // rotation: { y: Math.PI / 2},
   rotation: { y: Math.PI/2, x: Math.PI/2},
 };
 let blocklyInstructions = [

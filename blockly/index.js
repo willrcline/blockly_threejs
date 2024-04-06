@@ -23,8 +23,6 @@ Blockly.defineBlocksWithJsonArray([
 ]);
 
 Blockly.JavaScript['moveForward'] = function(block) {
-  // Here, you define what JavaScript code this block should generate.
-  // For example:
   const code = 'moveForward();\n';
   return code;
 };
@@ -57,7 +55,9 @@ const toolbox = {
   ],
 };
 
-const workspace = Blockly.inject('blocklyContainer', {
+const blocklyContainer = document.getElementById("blocklyContainer")
+
+const workspace = Blockly.inject(blocklyContainer, {
   media: './node_modules/blockly/media/',
   toolbox: toolbox,
 });

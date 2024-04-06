@@ -3,12 +3,8 @@ import {
   getProgramRunning,
   setProgramRunning,
   getUserPosition,
-  setUserPosition,
   getUserRotation,
-  setUserRotation,
   getBlocklyInstructions,
-  setCurrentInstructionIndex,
-  getCurrentInstructionIndex,
   resetUser
 } from "../context";
 import { executeInstruction } from "./executeInstruction";
@@ -50,7 +46,7 @@ camera.lookAt(0, 0, 0);
 
 const scene = new THREE.Scene();
 
-const light = new THREE.AmbientLight(0xffffff); // white light
+const light = new THREE.AmbientLight(0xffffff);
 scene.add(light);
 
 let userObj;
@@ -60,7 +56,7 @@ objLoader.setPath('assets/');
 objLoader.load('humanoid.obj', function ( object ) {
   userObj = object;
   scene.add( userObj )
-  userObj.scale.set(0.0006, 0.0006, 0.0006); // Adjust scale as needed
+  userObj.scale.set(0.0006, 0.0006, 0.0006);
   setUserObj()
 })
 

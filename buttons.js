@@ -7,7 +7,6 @@ import {
 } from "./context";
 import { workspace } from "./blockly";
 
-// Get the buttons
 var resetButton = document.getElementById("reset");
 var runButton = document.getElementById("run");
 
@@ -30,12 +29,10 @@ function handleRunProgram() {
     alert("Add blocks to the workspace to run the program")
     return;
   }
-  console.log("blockly codeArray___", codeArray);
   setBlocklyInstructions(codeArray);
   setProgramRunning(true);
   resetButton.style.display = "block";
   runButton.style.display = "none";
-  console.log("Program is running");
 }
 
 function handleResetProgram() {
@@ -44,7 +41,6 @@ function handleResetProgram() {
   setCurrentInstructionIndex(0);
   resetButton.style.display = "none";
   runButton.style.display = "block";
-  console.log("Program is reset");
 }
 
 export { handleRunProgram, handleResetProgram };
