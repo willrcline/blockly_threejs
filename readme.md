@@ -15,3 +15,7 @@ This program is a maze solver that uses Blockly, a visual programming language, 
 3. Run `npx vite` to start the development server (it should open up a new tab in your browser)
 3. Use the Blockly interface to create a sequence of instructions for the robot.
 4. Click the "Run Program" button to start the robot's movement through the maze. Try to guide the robot to the goal (green box)
+
+![Screenshot](/assets/readme/screenshot.png)
+![Screenshot](/assets/readme/obstacle.png)
+![Screenshot](/assets/readme/success.png)
