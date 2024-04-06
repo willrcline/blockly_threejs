@@ -111,17 +111,17 @@ function animation(time) {
         setTimeout(() => {
           handleResetProgram();
           updateUserObj();
-        }, 1000);
+        }, 500);
         return
       }
       if (checkCollision(goals)) {
-        alert("You reached the goal! You solved this level with " + getBlocklyInstructions().length + " lines of JavaScript!\n" +
-        getBlocklyInstructions())
+        alert("You reached the goal! You solved this level with " + getBlocklyInstructions().length + " lines of JavaScript!\n\n" +
+        getBlocklyInstructions().join("\n"))
         setProgramRunning(false);
         setTimeout(() => {
           handleResetProgram();
           updateUserObj();
-        }, 1000);
+        }, 500);
         return
       }
       

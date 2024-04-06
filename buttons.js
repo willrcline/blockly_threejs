@@ -28,9 +28,10 @@ checkButtonDisplay();
 
 // Function to toggle the programRunning variable
 function handleRunProgram() {
-  const code = Blockly.JavaScript.workspaceToCode(workspace);
-  console.log("blockly code___", code);
-  // setBlocklyInstructions(code)
+  const codeStr = Blockly.JavaScript.workspaceToCode(workspace);
+  const codeArray = codeStr.split("\n")
+  console.log("blockly codeArray___", codeArray);
+  setBlocklyInstructions(codeArray);
   setProgramRunning(true);
   resetButton.style.display = "block";
   runButton.style.display = "none";
