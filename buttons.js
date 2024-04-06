@@ -3,6 +3,7 @@ import {
   getProgramRunning,
   getUserPosition,
   setUserPosition,
+  setUserRotation,
   setCurrentInstructionIndex,
 } from "./context";
 
@@ -32,6 +33,7 @@ function handleRunProgram() {
 
 function handleResetProgram() {
   setUserPosition({ x: 0, y: -1 });
+  setUserRotation({ y: Math.PI/2, x: Math.PI/2})
   setProgramRunning(false);
   setCurrentInstructionIndex(0);
   resetButton.style.display = "none";

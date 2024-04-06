@@ -22,7 +22,7 @@ if (getCurrentInstructionIndex() < getBlocklyInstructions().length) {
     let newUserPosition = { ...currentUserPosition }; // Clone current position
 
     // Move forward based on the direction the user is facing
-    const forwardDistance = 0.25; // Adjust as needed
+    const forwardDistance = 0.5; // Adjust as needed
 
     // Normalize rotation to range [0, 2*Math.PI]
     let normalizedRotation = currentUserRotation.y % (2 * Math.PI);
@@ -30,16 +30,16 @@ if (getCurrentInstructionIndex() < getBlocklyInstructions().length) {
 
     if (normalizedRotation === 0 || normalizedRotation === 2 * Math.PI) {
       newUserPosition.x += forwardDistance;
-      // Facing positive Y-axis direction
+      // WORKS
     } else if (normalizedRotation === Math.PI / 2) {
-      // Facing positive X-axis direction
-      newUserPosition.y -= forwardDistance;
+      // WORKS
+      newUserPosition.y += forwardDistance;
     } else if (normalizedRotation === Math.PI) {
       // Facing negative Y-axis direction
       newUserPosition.x -= forwardDistance;
     } else if (normalizedRotation === 3 * Math.PI / 2) {
       // Facing negative X-axis direction
-      newUserPosition.y += forwardDistance;
+      newUserPosition.y -= forwardDistance;
     }
     
     setUserPosition(newUserPosition);

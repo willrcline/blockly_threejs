@@ -8,9 +8,12 @@ let blocklyInstructions = [
   "moveForward",
   "rotateRight",
   "moveForward",
-  // "rotateLeft",
-  // "moveForward",
-  // "moveForward",
+  "rotateLeft",
+  "moveForward",
+  "moveForward",
+  "moveForward",
+  "rotateLeft",
+  "moveForward",
 ];
 let currentInstructionIndex = 0;
 

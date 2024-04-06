@@ -17,8 +17,8 @@ const width = window.innerWidth / 2,
   height = window.innerHeight / 2;
 
 const camera = new THREE.PerspectiveCamera(70, width / height, 0.01, 10);
-camera.position.z = 1;
-camera.position.y = -3.5;
+camera.position.z = 2;
+camera.position.y = -1.5;
 camera.position.x = -.4;
 camera.lookAt(0, 0, 0);
 // camera.zoom = 2;
@@ -50,9 +50,9 @@ const objLoader = new OBJLoader();
   objLoader.load('humanoid.obj', function ( object ) {
     userObj = object;
     scene.add( userObj )
+    userObj.scale.set(0.0006, 0.0006, 0.0006); // Adjust scale as needed
     userObj.position.y = getUserPosition().y;
     userObj.position.x = getUserPosition().x;
-    userObj.scale.set(0.0006, 0.0006, 0.0006); // Adjust scale as needed
     userObj.rotation.y = getUserRotation().y;
     userObj.rotation.x = getUserRotation().x;
   })
@@ -91,14 +91,11 @@ const obstacles = [
 
 const sphere = new THREE.SphereGeometry(0.2, 32, 32);
 
-// const user = new THREE.Mesh(sphere, userMaterial);
-// scene.add(user);
-// user.position.y = getUserPosition().y;
-
 const goalMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
 const goal = new THREE.Mesh(box, goalMaterial);
+const goals = [goal]
 scene.add(goal);
-goal.position.y = 1.5;
+goal.position.y = 1;
 
 const renderer = new THREE.WebGLRenderer({
   antialias: true,
@@ -114,16 +111,36 @@ function animation(time) {
 
   if (getProgramRunning()) {
     if (userObj && time - lastInstructionTime >= 1) {
+      const checkObstacleCollision = obstacles.some((obstacle) => {
+        return (
+          userObj.position.distanceTo(obstacle.position) < 0.5
+        );
+      });
+      if (checkObstacleCollision) {
+        alert("You hit an obstacle!");
+        setProgramRunning(false);
+      }
+      const checkGoalCollision = goals.some((goal) => {
+        return (
+          userObj.position.distanceTo(goal.position) < 0.5
+        );
+      });
+      if (checkGoalCollision) {
+        alert("You reached the goal!");
+        setProgramRunning(false);
+      }
       executeInstruction();
       userObj.position.y = getUserPosition().y;
+      userObj.position.x = getUserPosition().x;
       userObj.rotation.y = getUserRotation().y;
-      console.log("program running getUserRotation.y", getUserRotation().y)
-      // userObj.rotation.y = userObj.rotation.y + Math.PI / 2;
       lastInstructionTime = time;
     }
   } else {
     if (userObj) {
       userObj.position.y = getUserPosition().y;
+      userObj.position.x = getUserPosition().x;
+      userObj.rotation.y = getUserRotation().y;
+      userObj.rotation.x = getUserRotation().x;
     }
   }
 
