@@ -17,6 +17,11 @@ let blocklyInstructions = [
 ];
 let currentInstructionIndex = 0;
 
+export const resetUser = () => {
+  user.position = { x: 0, y: -1 };
+  user.rotation = { y: Math.PI/2, x: Math.PI/2 };
+};
+
 export const getProgramRunning = () => programRunning;
 export const setProgramRunning = (value) => { programRunning = value; };
 export const getUserPosition = () => user.position;

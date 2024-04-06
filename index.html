@@ -3,6 +3,14 @@
 	<head>
 		<meta charset="utf-8">
 		<title>My first three.js app</title>
+    <!-- Load Blockly core -->
+    <script src="https://unpkg.com/blockly/blockly_compressed.js"></script>
+    <!-- Load the default blocks -->
+    <script src="https://unpkg.com/blockly/blocks_compressed.js"></script>
+    <!-- Load a generator -->
+    <script src="https://unpkg.com/blockly/javascript_compressed.js"></script>
+    <!-- Load a message file -->
+    <script src="https://unpkg.com/blockly/msg/en.js"></script>
 		<style>
 			body { 
         margin: 0; 
@@ -61,6 +69,7 @@
           document.getElementById("reset").onclick = handleResetProgram;
           document.getElementById("run").onclick = handleRunProgram;
         </script>
+        <script type="module" src="/blockly/index.js"> </script>
       </div>
     </div>
 	</body>

@@ -4,8 +4,11 @@ import {
   getUserPosition,
   setUserPosition,
   setUserRotation,
+  resetUser,
+  setBlocklyInstructions,
   setCurrentInstructionIndex,
 } from "./context";
+import { workspace } from "./blockly";
 
 // Get the buttons
 var resetButton = document.getElementById("reset");
@@ -25,6 +28,9 @@ checkButtonDisplay();
 
 // Function to toggle the programRunning variable
 function handleRunProgram() {
+  const code = Blockly.JavaScript.workspaceToCode(workspace);
+  console.log("blockly code___", code);
+  // setBlocklyInstructions(code)
   setProgramRunning(true);
   resetButton.style.display = "block";
   runButton.style.display = "none";
@@ -32,8 +38,7 @@ function handleRunProgram() {
 }
 
 function handleResetProgram() {
-  setUserPosition({ x: 0, y: -1 });
-  setUserRotation({ y: Math.PI/2, x: Math.PI/2})
+  resetUser();
   setProgramRunning(false);
   setCurrentInstructionIndex(0);
   resetButton.style.display = "none";
