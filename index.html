@@ -1,11 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Blockly robot maze</title>
-</head>
-<body>
-  <H1>Blockly robot maze</H1>
-  <iframe id="myIframe" style="width: 100%; height: 80vh;" src="app.html"></iframe>
-</body>
+	<head>
+		<meta charset="utf-8">
+		<title>My first three.js app</title>
+    <script src="https://unpkg.com/blockly/blockly_compressed.js"></script>
+    <script src="https://unpkg.com/blockly/blocks_compressed.js"></script>
+    <script src="https://unpkg.com/blockly/javascript_compressed.js"></script>
+    <script src="https://unpkg.com/blockly/msg/en.js"></script>
+		<style>
+			body { 
+        margin: 0; 
+        display: flex;
+        flex-direction: row;
+        height: 100vh;
+      }
+      #main {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%
+      }
+      #blocklyContainer {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 100%;
+      }
+      #threeContainer {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 100%;
+      }
+      #c {
+        position: static;
+      }
+      button {
+        display: none;
+        width: 80px;
+        margin: 10px;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+		</style>
+	</head>
+	<body>
+    <div id="main">
+      <div id="blocklyContainer"></div>
+      <div id="threeContainer">
+        <canvas id="c"></canvas>
+        <button id="reset" onclick="handleResetProgram()">Reset</button>
+        <button id="run" onclick="handleRunProgram()">Run program</button>
+        <script type="module" src="/src/three/index.js"></script>
+        <script type="module">
+          import { handleResetProgram, handleRunProgram } from '/src/buttons.js';
+          document.getElementById("reset").onclick = handleResetProgram;
+          document.getElementById("run").onclick = handleRunProgram;
+        </script>
+        <script type="module" src="/blockly/index.js"> </script>
+      </div>
+    </div>
+	</body>
 </html>

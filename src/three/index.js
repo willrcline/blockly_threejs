@@ -6,11 +6,11 @@ import {
   getUserRotation,
   getBlocklyInstructions,
   resetUser
-} from "../context";
+} from "/src/context";
 import { executeInstruction } from "./executeInstruction";
 import {OBJLoader} from 'three/addons/loaders/OBJLoader.js';
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader';
-import { handleResetProgram } from "../buttons";
+import { handleResetProgram } from "/src/buttons";
 
 let lastInstructionTime = 0;
 const width = window.innerWidth / 2, height = window.innerHeight / 2;

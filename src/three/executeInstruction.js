@@ -6,7 +6,7 @@ getUserPosition,
 setUserPosition,
 getUserRotation,
 setUserRotation,
-} from "../context";
+} from "/src/context";
 
 const moveForward = () => {
   let currentUserPosition = getUserPosition();

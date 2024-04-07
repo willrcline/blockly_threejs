@@ -4,8 +4,8 @@ import {
   resetUser,
   setBlocklyInstructions,
   setCurrentInstructionIndex,
-} from "./context";
-import { workspace } from "./blockly";
+} from "/src/context";
+import { workspace } from "../blockly";
 
 var resetButton = document.getElementById("reset");
 var runButton = document.getElementById("run");
