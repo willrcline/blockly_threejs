@@ -1,3 +1,4 @@
+import { setProgramRunning } from "../context";
 import {
 getBlocklyInstructions,
 getCurrentInstructionIndex,
@@ -6,7 +7,10 @@ getUserPosition,
 setUserPosition,
 getUserRotation,
 setUserRotation,
+resetUser,
 } from "/src/context";
+
+import { handleResetProgram } from "/src/buttons";
 
 const moveForward = () => {
   let currentUserPosition = getUserPosition();
@@ -59,6 +63,14 @@ const instructionMapping = {
 function executeInstruction() {
   if (getCurrentInstructionIndex() < getBlocklyInstructions().length) {
     const instruction = getBlocklyInstructions()[getCurrentInstructionIndex()];
+    if (!instruction || instruction === "") {
+      alert("You did not reach the target. Try again!");
+      setProgramRunning(false);
+      setTimeout(() => {
+        handleResetProgram();
+      }, 500);
+      return;
+    }
     const functionToExecute = instructionMapping[instruction];
     functionToExecute();
 

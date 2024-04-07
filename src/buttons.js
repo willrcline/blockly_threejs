@@ -36,6 +36,7 @@ function handleRunProgram() {
 }
 
 function handleResetProgram() {
+  console.log("buttons.js resetProgram__")
   resetUser();
   setProgramRunning(false);
   setCurrentInstructionIndex(0);
