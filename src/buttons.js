@@ -44,3 +44,5 @@ function handleResetProgram() {
 }
 
 export { handleRunProgram, handleResetProgram };
+window.handleResetProgram = handleResetProgram;
+window.handleRunProgram = handleRunProgram;

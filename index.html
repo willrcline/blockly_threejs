@@ -55,14 +55,11 @@
         <canvas id="c"></canvas>
         <button id="reset" onclick="handleResetProgram()">Reset</button>
         <button id="run" onclick="handleRunProgram()">Run program</button>
-        <script type="module" src="/src/three/index.js"></script>
-        <script type="module">
-          import { handleResetProgram, handleRunProgram } from '/src/buttons.js';
-          document.getElementById("reset").onclick = handleResetProgram;
-          document.getElementById("run").onclick = handleRunProgram;
-        </script>
-        <script type="module" src="/blockly/index.js"> </script>
       </div>
     </div>
+    <script type="module" src="/src/three/index.js"></script>
+    <script src="/src/buttons.js"></script>
+
+    <script type="module" src="/blockly/index.js"> </script>
 	</body>
 </html>
