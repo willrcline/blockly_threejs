@@ -1,6 +1,9 @@
 # Blockly Three.js Maze
 
-This program is a maze solver that uses Blockly, a visual programming language, to allow the user to instruct a robot how to navigate through a maze created with Three.js, a JavaScript library for 3D graphics.
+This program is a maze solver that uses Blockly, a visual programming language, to allow the user to instruct a robot how to navigate through a maze created with Three.js, a JavaScript library for 3D graphics.  
+
+* View the app deployed in an iframe [here](https://willrcline.github.io/blockly_threejs_container/).  
+* View the app itself [here](https://blockly-threejs-d0254cf7d7b7.herokuapp.com/).
 
 ## Features
 
