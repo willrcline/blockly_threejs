@@ -5,7 +5,7 @@ import {
   setBlocklyInstructions,
   setCurrentInstructionIndex,
 } from "/src/context";
-import { workspace } from "../blockly";
+import { workspace } from "/src/blockly/index";
 
 var resetButton = document.getElementById("reset");
 var runButton = document.getElementById("run");
@@ -36,7 +36,6 @@ function handleRunProgram() {
 }
 
 function handleResetProgram() {
-  console.log("buttons.js resetProgram__")
   resetUser();
   setProgramRunning(false);
   setCurrentInstructionIndex(0);
